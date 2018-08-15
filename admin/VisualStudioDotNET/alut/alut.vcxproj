@@ -26,22 +26,22 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -67,26 +67,30 @@
     <OutDir>$(ProjectDir)\..\..\..\lib\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\..\..\..\..\..\..\BinTemp\$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\..\..\..\openal-soft\include\AL;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(ProjectDir)\..\..\..\lib\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\..\..\..\..\..\..\BinTemp\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(ProjectDir)..\..\..\..\openal-soft\include\AL;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(ProjectDir)\..\..\..\lib\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\..\..\..\..\..\..\BinTemp\$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\..\..\..\openal-soft\include\AL;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)\..\..\..\lib\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\..\..\..\..\..\..\BinTemp\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(ProjectDir)..\..\..\..\openal-soft\include\AL;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\..\OpenAL\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>ALUT_BUILD_LIBRARY;HAVE__STAT;HAVE___INT8;HAVE_SLEEP;HAVE_WINDOWS_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -98,7 +102,7 @@
     <Link>
       <AdditionalDependencies>openal32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)alut32.dll</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\..\OpenAL\libs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\..\openal-soft\build\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)alut.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
@@ -133,7 +137,7 @@
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>..\..\..\..\OpenAL\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>ALUT_BUILD_LIBRARY;HAVE__STAT;HAVE___INT8;HAVE_SLEEP;HAVE_WINDOWS_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -145,7 +149,7 @@
     <Link>
       <AdditionalDependencies>openal32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)alut32.dll</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\..\OpenAL\libs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\..\openal-soft\build\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
